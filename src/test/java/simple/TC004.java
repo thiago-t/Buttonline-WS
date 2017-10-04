@@ -39,7 +39,7 @@ public class TC004 {
 		Thread.sleep(500);
 				
 		
-		//Verifica se existe algum Texto informando "Usuário ou Senha Inválidos"
+		//Verifica se existe algum Texto informando "Usuário ou Senha Inválidos".
 		String codigoPagina = driver.getPageSource();
 		assertThat(codigoPagina, Matchers.containsString(" Usuário ou Senha Inválidos"));
 		Thread.sleep(500);
