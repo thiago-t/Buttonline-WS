@@ -1,4 +1,4 @@
-package invalid.login;
+package simple;
 
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -10,7 +10,7 @@ public class TC002 {
 
 	@Test
 	public void test() throws InterruptedException {
-		System.setProperty("webdriver.chrome.driver", "C:/Users/teste/Desktop/chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "C:/Users/PC 09/Desktop/chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 
 		driver.navigate().to("http://www.buttonline.com.br/data/mx_login.php");

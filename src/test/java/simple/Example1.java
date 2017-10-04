@@ -14,7 +14,7 @@ public class Example1 {
 
 	@Test
 	public void test() throws InterruptedException {
-		System.setProperty("webdriver.chrome.driver", "C:/Users/teste/Desktop/chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "C:/Users/PC 09/Desktop/chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 
 		driver.navigate().to("http://www.buttonline.com.br/data/mx_login.php");
@@ -22,9 +22,9 @@ public class Example1 {
 		// Thread.sleep(500);
 		// driver.quit();
 
-		// Preenche o Email com o valor "thia@gmail.com"
+		// Preenche o Email com o valor "brian.roller@hotmail.com"
 		WebElement inputEmail = driver.findElement(By.name("email"));
-		inputEmail.sendKeys("thia@gmail.com");
+		inputEmail.sendKeys("brian.roller@hotmail.com");
 		// Preenche a Senha com o valor "123"
 		WebElement inputSenha = driver.findElement(By.name("senha"));
 		inputSenha.sendKeys("123");
@@ -34,9 +34,9 @@ public class Example1 {
 		buttonLogin.click();
 
 		//Verifica os Resultados		
-		// Por meio da asserção Hamcrest, procura pela string “SouFernandoBaleia"
+		// Por meio da asserção Hamcrest, procura pela string “Brian"
 		String codigoPagina = driver.getPageSource();
-		assertThat(codigoPagina, Matchers.containsString("SouFernandoBaleia"));
+		assertThat(codigoPagina, Matchers.containsString("Brian"));
 		// Verifica se existe o link que acessa a ferramenta.
 		assertNotNull(driver.findElement(By.cssSelector("a[href*='buttonlinebeta']")));
 
