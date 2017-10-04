@@ -10,7 +10,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class Example1 {
+public class TC003 {
 
 	@Test
 	public void test() throws InterruptedException {
