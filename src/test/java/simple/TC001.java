@@ -10,11 +10,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+
+
 public class TC001 {
 
 	@Test
 	public void test() throws InterruptedException {
-		System.setProperty("webdriver.chrome.driver", "C:/Users/PC 09/Desktop/chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "C:/Users/Brian Tessele/Desktop/chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 
 		driver.navigate().to("http://buttonline.com.br/data/mx_cadastro.php");
@@ -24,47 +26,50 @@ public class TC001 {
 
 		// Preenche o Email com o valor "teste.2017@gmail.com"
 		WebElement inputEmail = driver.findElement(By.name("email"));
-		inputEmail.sendKeys("teste.asd201asd337@gmail.com");
+		inputEmail.sendKeys("carinhadeanjo@gmail.com");
+		//Pause for 2 seconds
+        Thread.sleep(2000);
 		// Preenche a Senha com o valor "123"
 		WebElement inputSenha = driver.findElement(By.name("senha"));
 		inputSenha.sendKeys("123");
+        Thread.sleep(2000);
 		// Preenche a Senha com o valor "123"
 		WebElement inputSenhaConf = driver.findElement(By.name("senha_conf"));
 		inputSenhaConf.sendKeys("123");
+        Thread.sleep(2000);
 		// Preenche a Senha com o valor "Jaqueline"
 		WebElement inputNome = driver.findElement(By.name("nome"));
 		inputNome.sendKeys("Jaqueline");
+		Thread.sleep(2000);
 		// Preenche a Senha com o valor "Tester"
 		WebElement inputProfissao = driver.findElement(By.name("profissao"));
-		inputProfissao.sendKeys("Tester");
+		inputProfissao.sendKeys("Veterinária");
+		Thread.sleep(2000);
 		
 
 		// Clica no botão Login
 		WebElement buttonEnviar = driver.findElement(By.cssSelector("input[value='Enviar'"));
 		buttonEnviar.click();
+		Thread.sleep(3000);
 		
+		//System.out.println("Alert text is: " +driver.switchTo().alert().getText());
 		
-		driver.get("http://buttonline.com.br/data/mx_cadastro.php");
-		WebElement sign = driver.findElement(By.xpath("//html/body/div[3]/div[3]/span[4]/span/a"));
-		sign.click();
-		String myWindowHandle = driver.getWindowHandle();
-		driver.switchTo().window(myWindowHandle);
-		driver.findElement(By.xpath("//*[@string='ok']/a[1]")).click();
-	
-		//Verifica os Resultados		
-		// Por meio da asserção Hamcrest, procura pela string “Seu cadastro foi efetuado com sucesso."
+		//Verifica se a mensagem "Seu cadastro foi efetuado com sucesso." aparece.
+		String expected = "Seu cadastro foi efetuado com sucesso.";
+		String actual = driver.switchTo().alert().getText();
+			
+			assertEquals(expected, actual);
+		
+		//Aceita o Alert();	
+		driver.switchTo().alert().accept();
+		
+		System.out.println(actual);	
+		
+	   
+		//Verifica os Resultados por meio da asserção Hamcrest,
+		//procura pela string “Jaqueline"
 		String codigoPagina = driver.getPageSource();
-		assertThat(codigoPagina, Matchers.containsString("Seu cadastro foi efetuado com sucesso."));
-		Thread.sleep(500);
-		
-		String codigoPagina1 = driver.getPageSource();
-		assertThat(codigoPagina1, Matchers.containsString("Jaquel"));
-		Thread.sleep(500);
-		
-		
-		// Por meio da asserção Hamcrest, procura pela string “Seu cadastro foi efetuado com sucesso."
-		String codigoPagina2 = driver.getPageSource();
-		assertThat(codigoPagina2, Matchers.containsString("Jaqueline"));
+		assertThat(codigoPagina, Matchers.containsString("Jaqueline"));
 		Thread.sleep(500);
 		
 		// Verifica se existe o link que acessa a ferramenta.
@@ -74,5 +79,5 @@ public class TC001 {
 		driver.quit();
 		
 	}
-
 }
+
