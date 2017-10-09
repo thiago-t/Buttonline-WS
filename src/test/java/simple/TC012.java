@@ -1,18 +1,16 @@
 package simple;
 
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+
+import java.util.Set;
+
 import org.junit.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
-
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.junit.Assert.*;
-
-import org.hamcrest.Matchers;
 
 public class TC012 {
 
@@ -23,7 +21,7 @@ public class TC012 {
 
 		driver.navigate().to("http://www.buttonline.com.br/data/mx_login.php");
 		driver.manage().window().maximize(); 
-		// String title = driver.getTitle();
+		
 		// Thread.sleep(500);
 		// driver.quit();
 
@@ -61,18 +59,49 @@ public class TC012 {
 		WebElement inputAmount = driver.findElement(By.cssSelector("input[type='number']"));
 		inputAmount.clear();
 		inputAmount.sendKeys("8");
-		
+		Thread.sleep(500);
 
-		//driver.findElement(By.xpath("//*[@id=\"printModal\"]/div/div/div[2]/div/div/div[3]/button")).click();
 		
-		
-		//// Verifica se o botão "Imprimir" existe e clica;
+		// Verifica se o botão "Imprimir" existe e clica;
 		WebElement buttonPrint2 = driver.findElement(By.xpath("//*[@id=\"printModal\"]/div/div/div[2]/div/div/div[3]/button"));
 		assertNotNull(buttonPrint2);
 		buttonPrint2.click();
+		Thread.sleep(500);
+				
+		//O método registra a janela atual e muda para janela aberta após o clique		
+		String parentWindow = driver.getWindowHandle();
+		Set<String> handles =  driver.getWindowHandles();
+			for(String windowHandle  : handles)
+			{
+			       if(!windowHandle.equals(parentWindow))
+			          {
+			          driver.switchTo().window(windowHandle);
+			          
+			          //Verifica se a página de impressão existe e aparece para o usuário
+			          String actual = driver.getTitle();
+			          String expected = "impressao.php";
+						
+			          	assertEquals(expected, actual);
+						
+			          WebElement pagePrint = driver.findElement(By.xpath("//*[@id=\"plugin\"]"));
+			          assertNotNull(pagePrint);
+						
+					
+			         driver.quit(); //closing child window
+			         driver.switchTo().window(parentWindow); //cntrl to parent window
+			          }
+			       }   
+	
 		
 
-		//http://www.buttonline.com.br/data/buttonlinebeta/api/impressao.php
+	
+		
+		
+	
+		
+		
+		
+		
 		
 	}
 
