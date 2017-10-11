@@ -2,6 +2,8 @@ package simple;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.assertNotNull;
+
+
 import org.hamcrest.Matchers;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -36,10 +38,12 @@ public class TC003 {
 		// Por meio da assersao Hamcrest, procura pela string Brian"
 		String codigoPagina = driver.getPageSource();
 		assertThat(codigoPagina, Matchers.containsString("Brian"));
+		
+
 		// Verifica se existe o link que acessa a ferramenta.
 		assertNotNull(driver.findElement(By.cssSelector("a[href*='buttonlinebeta']")));
 
-		// driver.findElement(By.cssSelector("a[href*='buttonlinebeta']")).click();
+		driver.findElement(By.cssSelector("a[href*='buttonlinebeta']")).click();
 
 	}
 
