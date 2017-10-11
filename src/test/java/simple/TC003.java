@@ -1,10 +1,9 @@
 package simple;
 
-import static org.hamcrest.MatcherAssert.assertThat;
+
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
-
-import org.hamcrest.Matchers;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -37,7 +36,8 @@ public class TC003 {
 		//Verifica os Resultados		
 		// Por meio da assersao Hamcrest, procura pela string Brian"
 		String codigoPagina = driver.getPageSource();
-		assertThat(codigoPagina, Matchers.containsString("Brian"));
+		assertTrue(codigoPagina.contains("Brian"));
+		Thread.sleep(500);
 		
 
 		// Verifica se existe o link que acessa a ferramenta.

@@ -3,9 +3,7 @@ package simple;
 
 
 import static org.junit.Assert.assertNotNull;
-import static org.hamcrest.MatcherAssert.assertThat;
-
-import org.hamcrest.Matchers;
+import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -43,15 +41,8 @@ public class TC004 {
 		
 		//Verifica se existe algum Texto informando "Usuario ou Senha Invalidos".
 		String codigoPagina = driver.getPageSource();
-		assertThat(codigoPagina, Matchers.containsString("Usuario ou Senha Invalidos"));
-		
-		
+		assertTrue(codigoPagina.contains("Usuario ou Senha Invalidos"));
 		Thread.sleep(500);
-		
-		
-		
-		
-		
 	
 	}
 
