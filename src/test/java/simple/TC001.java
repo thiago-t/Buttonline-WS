@@ -2,7 +2,6 @@ package simple;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.*;
-
 import org.hamcrest.Matchers;
 import org.junit.Test;
 import org.openqa.selenium.By;
