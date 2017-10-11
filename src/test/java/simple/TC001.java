@@ -1,8 +1,9 @@
 package simple;
 
-import static org.hamcrest.MatcherAssert.assertThat;
+
 import static org.junit.Assert.*;
-import org.hamcrest.Matchers;
+
+
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -25,7 +26,7 @@ public class TC001 {
 
 		// Preenche o Email com o valor "teste.2017@gmail.com"
 		WebElement inputEmail = driver.findElement(By.name("email"));
-		inputEmail.sendKeys("carinhadeanjo@gmail.com");
+		inputEmail.sendKeys("carinhadeansdsdsdjo@gmail.com");
 		//Pause for 2 seconds
         Thread.sleep(2000);
 		// Preenche a Senha com o valor "123"
@@ -68,7 +69,7 @@ public class TC001 {
 		//Verifica os Resultados por meio da assercao Hamcrest,
 		//procura pela string "Jaqueline"
 		String codigoPagina = driver.getPageSource();
-		assertThat(codigoPagina, Matchers.containsString("Jaqueline"));
+		assertTrue(codigoPagina.contains("Jaqueline"));
 		Thread.sleep(500);
 		
 		// Verifica se existe o link que acessa a ferramenta.
