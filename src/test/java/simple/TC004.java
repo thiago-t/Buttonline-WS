@@ -1,8 +1,10 @@
 package simple;
 
-import static org.hamcrest.MatcherAssert.assertThat;
+
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
+import org.hamcrest.Matcher;
 import org.hamcrest.Matchers;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -40,8 +42,18 @@ public class TC004 {
 				
 		
 		//Verifica se existe algum Texto informando "Usuario ou Senha Invalidos".
-		String codigoPagina = driver.getPageSource();
-		assertThat(codigoPagina, Matchers.containsString(" Usuario ou Senha Invalidos"));
+		//String codigoPagina = driver.getPageSource();
+		
+		//assertThat(codigoPagina, Matchers.containsString("Usuario ou Senha Invalidos"));
+		
+		//Matcher<String> codigoString = Matchers.containsString("Usuario ou Senha Invalidos");
+		
+		Matcher<String> expected = Matchers.containsString("Usuario ou Senha Invalidos");
+		String actual = driver.getPageSource();
+					
+			assertEquals(expected, actual);
+			
+		
 		Thread.sleep(500);
 		
 		

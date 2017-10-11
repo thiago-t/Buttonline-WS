@@ -3,9 +3,7 @@ package simple;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
-
 import java.util.Set;
-
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -90,19 +88,7 @@ public class TC012 {
 			         driver.quit(); //closing child window
 			         driver.switchTo().window(parentWindow); //cntrl to parent window
 			          }
-			       }   
-	
-		
-
-	
-		
-		
-	
-		
-		
-		
-		
-		
+			       }   	
 	}
 
 }
