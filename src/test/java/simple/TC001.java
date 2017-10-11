@@ -43,11 +43,11 @@ public class TC001 {
 		Thread.sleep(2000);
 		// Preenche a Senha com o valor "Tester"
 		WebElement inputProfissao = driver.findElement(By.name("profissao"));
-		inputProfissao.sendKeys("Veterinária");
+		inputProfissao.sendKeys("Veterinï¿½ria");
 		Thread.sleep(2000);
 		
 
-		// Clica no botão Login
+		// Clica no botao Login
 		WebElement buttonEnviar = driver.findElement(By.cssSelector("input[value='Enviar'"));
 		buttonEnviar.click();
 		Thread.sleep(3000);
@@ -66,8 +66,8 @@ public class TC001 {
 		System.out.println(actual);	
 		
 	   
-		//Verifica os Resultados por meio da asserção Hamcrest,
-		//procura pela string “Jaqueline"
+		//Verifica os Resultados por meio da asserï¿½ï¿½o Hamcrest,
+		//procura pela string ï¿½Jaqueline"
 		String codigoPagina = driver.getPageSource();
 		assertThat(codigoPagina, Matchers.containsString("Jaqueline"));
 		Thread.sleep(500);

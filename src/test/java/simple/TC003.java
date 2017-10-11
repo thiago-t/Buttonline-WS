@@ -29,12 +29,12 @@ public class TC003 {
 		WebElement inputSenha = driver.findElement(By.name("senha"));
 		inputSenha.sendKeys("123");
 
-		// Clica no botão Login
+		// Clica no botao Login
 		WebElement buttonLogin = driver.findElement(By.cssSelector("input[type='submit'"));
 		buttonLogin.click();
 
 		//Verifica os Resultados		
-		// Por meio da asserção Hamcrest, procura pela string “Brian"
+		// Por meio da asserï¿½ï¿½o Hamcrest, procura pela string ï¿½Brian"
 		String codigoPagina = driver.getPageSource();
 		assertThat(codigoPagina, Matchers.containsString("Brian"));
 		// Verifica se existe o link que acessa a ferramenta.
