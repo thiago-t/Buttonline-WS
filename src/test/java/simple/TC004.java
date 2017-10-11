@@ -28,20 +28,20 @@ public class TC004 {
 		inputSenha.sendKeys("321");
 		Thread.sleep(500);
 
-		// Clica no botão Login
+		// Clica no botao Login
 		WebElement buttonLogin = driver.findElement(By.cssSelector("input[type='submit'"));
 		buttonLogin.click();
 		Thread.sleep(1000);
 		
 		
-		// Verifica se existe o formulário de login
+		// Verifica se existe o formulario de login
 		assertNotNull(driver.findElements(By.xpath("//form[@name='login']/*")));
 		Thread.sleep(500);
 				
 		
-		//Verifica se existe algum Texto informando "Usuário ou Senha Inválidos".
+		//Verifica se existe algum Texto informando "Usuario ou Senha Invalidos".
 		String codigoPagina = driver.getPageSource();
-		assertThat(codigoPagina, Matchers.containsString(" Usuário ou Senha Inválidos"));
+		assertThat(codigoPagina, Matchers.containsString(" Usuario ou Senha Invalidos"));
 		Thread.sleep(500);
 		
 		

@@ -34,7 +34,7 @@ public class TC003 {
 		buttonLogin.click();
 
 		//Verifica os Resultados		
-		// Por meio da asser��o Hamcrest, procura pela string �Brian"
+		// Por meio da assersao Hamcrest, procura pela string Brian"
 		String codigoPagina = driver.getPageSource();
 		assertThat(codigoPagina, Matchers.containsString("Brian"));
 		// Verifica se existe o link que acessa a ferramenta.

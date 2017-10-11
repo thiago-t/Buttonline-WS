@@ -66,8 +66,8 @@ public class TC001 {
 		System.out.println(actual);	
 		
 	   
-		//Verifica os Resultados por meio da asser��o Hamcrest,
-		//procura pela string �Jaqueline"
+		//Verifica os Resultados por meio da assercao Hamcrest,
+		//procura pela string "Jaqueline"
 		String codigoPagina = driver.getPageSource();
 		assertThat(codigoPagina, Matchers.containsString("Jaqueline"));
 		Thread.sleep(500);

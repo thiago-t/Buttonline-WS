@@ -31,7 +31,7 @@ public class TC005 {
 		WebElement inputSenha = driver.findElement(By.name("senha"));
 		inputSenha.sendKeys("123");
 
-		// Clica no botão Login
+		// Clica no botï¿½o Login
 		WebElement buttonLogin = driver.findElement(By.cssSelector("input[type='submit'"));
 		buttonLogin.click();
 		
@@ -39,14 +39,14 @@ public class TC005 {
 		driver.findElement(By.cssSelector("a[href*='buttonlinebeta']")).click();
 
 
-		// Verifica se existe o botão Help.
+		// Verifica se existe o botao Help.
 		WebElement helpButton = driver.findElement(By.xpath("//a[@class='btn btn-help navbar-btn ng-binding']"));
 		assertNotNull(helpButton);
 		helpButton.click();
 		
-		// Por meio da asserção Hamcrest, procura pela string “Instruções"
+		// Por meio da asserï¿½ï¿½o Hamcrest, procura pela string "Instrucoes"
 		String codigoPagina = driver.getPageSource();
-		assertThat(codigoPagina, Matchers.containsString("Instruções"));
+		assertThat(codigoPagina, Matchers.containsString("Instrucoes"));
 		
 		
 	}

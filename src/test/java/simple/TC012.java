@@ -34,22 +34,22 @@ public class TC012 {
 		inputSenha.sendKeys("123");
 		Thread.sleep(200);
 
-		// Clica no botão Login
+		// Clica no botao Login
 		WebElement buttonLogin = driver.findElement(By.cssSelector("input[type='submit'"));
 		buttonLogin.click();
 		Thread.sleep(500);
 		// Clica no banner "Experimente o Sistema"
 		driver.findElement(By.cssSelector("a[href*='buttonlinebeta']")).click();
 		Thread.sleep(500);
-		// Clica na função "Novo Button"
+		// Clica na funcao "Novo Button"
 		WebElement newButton = driver.findElement(By.cssSelector("a[class='ng-binding ng-isolate-scope']"));
 		newButton.click();
 		Thread.sleep(500);
-		// Clica no botão "Redondo - 45mm"
+		// Clica no botao "Redondo - 45mm"
 		WebElement button45 = driver.findElement(By.cssSelector("a[href*='editor.php?tamanho=45&formato=redondo']"));
 		button45.click();
 		Thread.sleep(500);
-		// Clica no botão "Imprimir"
+		// Clica no botao "Imprimir"
 		WebElement buttonPrint = driver.findElement(By.cssSelector("a[class='btn btn-default btn-print navbar-btn btn-great ng-binding']"));
 		buttonPrint.click();
 		Thread.sleep(500);
@@ -62,13 +62,13 @@ public class TC012 {
 		Thread.sleep(500);
 
 		
-		// Verifica se o botão "Imprimir" existe e clica;
+		// Verifica se o botao "Imprimir" existe e clica;
 		WebElement buttonPrint2 = driver.findElement(By.xpath("//*[@id=\"printModal\"]/div/div/div[2]/div/div/div[3]/button"));
 		assertNotNull(buttonPrint2);
 		buttonPrint2.click();
 		Thread.sleep(500);
 				
-		//O método registra a janela atual e muda para janela aberta após o clique		
+		//O metodo registra a janela atual e muda para janela aberta apï¿½s o clique		
 		String parentWindow = driver.getWindowHandle();
 		Set<String> handles =  driver.getWindowHandles();
 			for(String windowHandle  : handles)
@@ -77,7 +77,7 @@ public class TC012 {
 			          {
 			          driver.switchTo().window(windowHandle);
 			          
-			          //Verifica se a página de impressão existe e aparece para o usuário
+			          //Verifica se a pagina de impressao existe e aparece para o usuario
 			          String actual = driver.getTitle();
 			          String expected = "impressao.php";
 						
