@@ -1,4 +1,10 @@
 eclipse.preferences.version=1
+encoding//src/main/java/pageObjects/HomePage.java=UTF-8
+encoding//src/main/java/pageObjects/LoginPage.java=UTF-8
+encoding//src/main/java/pageObjects/RegisterPage.java=UTF-8
+encoding//src/test/java/funcionalTest/CadastroValidoComPageObjectTest.java=UTF-8
+encoding//src/test/java/funcionalTest/LoginInvalidoComPageObjectsTest.java=UTF-8
+encoding//src/test/java/funcionalTest/LoginSistemaComPageObjectTest.java=UTF-8
 encoding//src/test/java/simple/TC001.java=UTF-8
 encoding//src/test/java/simple/TC002.java=UTF-8
 encoding//src/test/java/simple/TC003.java=UTF-8

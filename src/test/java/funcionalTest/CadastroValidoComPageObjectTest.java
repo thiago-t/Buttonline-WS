@@ -9,7 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import pageObjects.HomePage;
 import pageObjects.RegisterPage;
 
-public class CadastroVálidoComPageObjectTest {
+public class CadastroValidoComPageObjectTest {
 
 	private WebDriver driver;
 
@@ -21,12 +21,12 @@ public class CadastroVálidoComPageObjectTest {
 	}
 
 	@Test
-	public void cadastroVálido() throws InterruptedException {
+	public void cadastroValido() throws InterruptedException {
 
 		RegisterPage registerPage = new RegisterPage(driver);
 		HomePage homePage = new HomePage(driver);
 			registerPage.visita("http://buttonline.com.br/data/mx_cadastro.php").
-			autentica("TesterDoS2b@gmail.com", "123", "123","Brian", "tester");
+			autentica("TesteNovo@gmail.com", "123", "123","Brian", "tester");
 			
 			Thread.sleep(3000);
 
