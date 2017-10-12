@@ -12,7 +12,7 @@ public class TC005 {
 
 	@Test
 	public void test() throws InterruptedException {
-		System.setProperty("webdriver.chrome.driver", "C:/Users/teste/Desktop/chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "C:/Users/Brian Tessele/Desktop/chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 
 		driver.navigate().to("http://www.buttonline.com.br/data/mx_login.php");
@@ -27,7 +27,7 @@ public class TC005 {
 		WebElement inputSenha = driver.findElement(By.name("senha"));
 		inputSenha.sendKeys("123");
 
-		// Clica no bot�o Login
+		// Clica no botao Login
 		WebElement buttonLogin = driver.findElement(By.cssSelector("input[type='submit'"));
 		buttonLogin.click();
 		
@@ -40,7 +40,7 @@ public class TC005 {
 		assertNotNull(helpButton);
 		helpButton.click();
 		
-		// Por meio da asser��o Hamcrest, procura pela string "Instrucoes"
+		// Por meio da assercao Hamcrest, procura pela string "Instrucoes"
 		String codigoPagina = driver.getPageSource();
 		assertTrue(codigoPagina.contains("Instrucoes"));
 		Thread.sleep(500);

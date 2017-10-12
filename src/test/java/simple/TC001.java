@@ -43,7 +43,7 @@ public class TC001 {
 		Thread.sleep(2000);
 		// Preenche a Senha com o valor "Tester"
 		WebElement inputProfissao = driver.findElement(By.name("profissao"));
-		inputProfissao.sendKeys("Veterin�ria");
+		inputProfissao.sendKeys("Veterinaria");
 		Thread.sleep(2000);
 		
 

@@ -3,7 +3,6 @@ package simple;
 
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
-
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

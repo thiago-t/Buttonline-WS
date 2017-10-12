@@ -2,7 +2,7 @@ package simple;
 
 
 
-import static org.junit.Assert.assertNotNull;
+
 import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -14,7 +14,7 @@ public class TC004 {
 
 	@Test
 	public void test() throws InterruptedException {
-		System.setProperty("webdriver.chrome.driver", "C:/Users/teste/Desktop/chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "C:/Users/Brian Tessele/Desktop/chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 
 		driver.navigate().to("http://www.buttonline.com.br/data/mx_login.php");
@@ -32,13 +32,7 @@ public class TC004 {
 		WebElement buttonLogin = driver.findElement(By.cssSelector("input[type='submit'"));
 		buttonLogin.click();
 		Thread.sleep(1000);
-		
-		
-		// Verifica se existe o formulario de login
-		assertNotNull(driver.findElements(By.xpath("//form[@name='login']/*")));
-		Thread.sleep(500);
-				
-		
+	
 		//Verifica se existe algum Texto informando "Usuario ou Senha Invalidos".
 		String codigoPagina = driver.getPageSource();
 		assertTrue(codigoPagina.contains("Usuario ou Senha Invalidos"));
