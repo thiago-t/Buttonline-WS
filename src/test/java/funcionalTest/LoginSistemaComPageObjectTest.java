@@ -7,6 +7,9 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import static org.junit.Assert.assertTrue;
+
+import java.util.concurrent.TimeUnit;
+
 import pageObjects.HomePage;
 import pageObjects.LoginPage;
 
@@ -18,7 +21,7 @@ public class LoginSistemaComPageObjectTest {
 	 public void before() {
 		 System.setProperty("webdriver.chrome.driver", "C:/Users/Brian Tessele/Desktop/chromedriver.exe");
 		 driver = new ChromeDriver();
-	  
+		 driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	 }
 	 
 	 @Test

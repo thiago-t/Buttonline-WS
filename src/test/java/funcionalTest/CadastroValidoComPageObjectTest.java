@@ -1,6 +1,9 @@
 package funcionalTest;
 
 import static org.junit.Assert.*;
+
+import java.util.concurrent.TimeUnit;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -17,7 +20,7 @@ public class CadastroValidoComPageObjectTest {
 	public void before() {
 		System.setProperty("webdriver.chrome.driver", "C:/Users/Brian Tessele/Desktop/chromedriver.exe");
 		driver = new ChromeDriver();
-
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	}
 
 	@Test
@@ -26,10 +29,9 @@ public class CadastroValidoComPageObjectTest {
 		RegisterPage registerPage = new RegisterPage(driver);
 		HomePage homePage = new HomePage(driver);
 			registerPage.visita("http://buttonline.com.br/data/mx_cadastro.php").
-			autentica("TesteNovo@gmail.com", "123", "123","Brian", "tester");
+			autentica("Nasdasovso@gmail.com", "123", "123","Brian", "tester");
 			
-			Thread.sleep(3000);
-
+		
 		assertTrue(homePage.cadastroEfetuadoComSucesso());
 
 		registerPage.aceitarAlert();
