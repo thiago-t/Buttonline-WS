@@ -15,20 +15,18 @@ import pageObjects.LoginPage;
 
 public class LoginSistemaComPageObjectTest {
 	 
-	// private WebDriver driver;
+	 private WebDriver driver;
 	 
-	/* @Before
+	 @Before
 	 public void before() {
 		 System.setProperty("webdriver.chrome.driver", "C:/Users/Brian Tessele/Desktop/chromedriver.exe");
 		 WebDriver driver = new ChromeDriver();
 		 driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-	 }*/
+	 }
 	 
 	 @Test
 	 public void loginComSucesso() {
-		 System.setProperty("webdriver.chrome.driver", "C:/Users/Brian Tessele/Desktop/chromedriver.exe");
-			WebDriver driver = new ChromeDriver();
-		 
+		
 		 LoginPage loginPage = new LoginPage(driver);
 		   HomePage homePage = loginPage.
 		                                visita("http://www.buttonline.com.br/data/mx_login.php").
@@ -37,9 +35,9 @@ public class LoginSistemaComPageObjectTest {
 	   assertTrue(homePage.isValida());
 	 }
 	 
-	// @After
-	// public void after() {
-	//   driver.quit();
-	// }
+	@After
+	public void after() {
+	   driver.quit();
+	 }
 	 
 	}

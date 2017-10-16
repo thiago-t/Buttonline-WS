@@ -16,7 +16,7 @@ public class TC001 {
 
 	@Test
 	public void test() throws InterruptedException {
-		System.setProperty("webdriver.chrome.driver", "C:/Users/teste/Desktop/chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "C:/Users/Brian Tessele/Desktop/chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 
 		driver.navigate().to("http://buttonline.com.br/data/mx_cadastro.php");
@@ -26,7 +26,7 @@ public class TC001 {
 
 		// Preenche o Email com o valor "teste.2017@gmail.com"
 		WebElement inputEmail = driver.findElement(By.name("email"));
-		inputEmail.sendKeys("carinhadeansdsdsdjo@gmail.com");
+		inputEmail.sendKeys("testandoocadastro@gmail.com");
 		//Pause for 2 seconds
         Thread.sleep(2000);
 		// Preenche a Senha com o valor "123"
