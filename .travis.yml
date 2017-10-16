@@ -1,10 +1,7 @@
-addons:
-  apt:
-    sources:
-      - google-chrome
-    packages:
-      - google-chrome-stable
-
 language: java
+
+before_install :
+  - wget https://chromedriver.storage.googleapis.com/2.30/chromedriver_linux64.zip -O / tmp / chromedriver 
+  - chmod 777 / tmp / chromedriver
 
 script: mvn test
