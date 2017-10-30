@@ -15,20 +15,20 @@ public class TC006 {
 
 	@Test
 	public void test() throws InterruptedException {
-		System.setProperty("webdriver.chrome.driver", "C:/Users/Brian Tessele/Desktop/chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "C:/Users/Brian Tessele/git/Buttonline-WS/src/main/resources/chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 
 		driver.navigate().to("http://buttonline.com.br/data/mx_cadastro.php");
-
+		driver.manage().window().maximize();
 		// Fill the e-mail field with "brian.roller@hotmail.com"
 		WebElement inputEmail = driver.findElement(By.name("email"));
 		inputEmail.sendKeys("brian.roller@hotmail.com");
-        Thread.sleep(2000); 
+        Thread.sleep(5000); 
         
         // Fill the password field with "123"
 		WebElement inputSenha = driver.findElement(By.name("senha"));
 		inputSenha.sendKeys("123");
-		Thread.sleep(1000);
+		Thread.sleep(3000);
        
 		// Verify if the system returns the error message.
 		String expected = "E-mail ja cadastrado !";
@@ -36,6 +36,7 @@ public class TC006 {
 					
 			assertEquals(expected, actual);
 		
+			Thread.sleep(5000);
 		driver.quit();
 	}
 }

@@ -1,12 +1,15 @@
 package funcionalTest;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
+
 import java.util.concurrent.TimeUnit;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+
 import pageObjects.HomePage;
 import pageObjects.RegisterPage;
 
@@ -16,7 +19,7 @@ public class CadastroValidoComPageObjectTest {
 
 	@Before
 	public void before() {
-		System.setProperty("webdriver.chrome.driver", "C:/Users/Brian Tessele/Desktop/chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "C:/Users/Brian Tessele/git/Buttonline-WS/src/main/resources/chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	} 
@@ -27,7 +30,7 @@ public class CadastroValidoComPageObjectTest {
 		RegisterPage registerPage = new RegisterPage(driver);
 		HomePage homePage = new HomePage(driver);
 			registerPage.visita("http://buttonline.com.br/data/mx_cadastro.php").
-			autentica("newtest@gmail.com", "123", "123","Brian", "tester");
+			autentica("newtsestline@gmail.com", "123", "123","Brian", "tester");
 			
 		
 		assertTrue(homePage.cadastroEfetuadoComSucesso());
