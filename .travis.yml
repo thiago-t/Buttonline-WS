@@ -1,7 +1,7 @@
 sudo: required
 language: java
 
-script: mvn test -f /home/travis/build/thiago-t/Buttonline-WS/simple/pom.xml
+script: mvn test -f ./pom.xml
 
 before_script:
     - wget http://chromedriver.storage.googleapis.com/2.27/chromedriver_linux64.zip
