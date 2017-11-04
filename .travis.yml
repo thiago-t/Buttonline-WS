@@ -1,14 +1,9 @@
 sudo: required
 language: java
 
+script: mvn test -f ./simple/pom.xml
+
 before_script:
- - bundle install
-    - gem install watir
-    - gem install colorize
-    - gem install rspec
-    - gem install cucumber
-    - gem install rake
-    - gem install chromium
     - wget http://chromedriver.storage.googleapis.com/2.27/chromedriver_linux64.zip
     - unzip chromedriver_linux64.zip
     - sudo apt-get install libnss3
