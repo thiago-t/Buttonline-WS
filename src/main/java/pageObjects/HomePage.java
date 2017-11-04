@@ -12,6 +12,7 @@ public class HomePage {
 		this.driver = driver;
 	}
 
+
 	public boolean isValida() {
 		return temMensagemDeOla() && temBannerDoSistema();
 	}

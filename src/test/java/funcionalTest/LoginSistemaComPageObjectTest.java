@@ -6,12 +6,10 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-
 import pageObjects.HomePage;
 import pageObjects.LoginPage;
-
 import static org.junit.Assert.assertTrue;
-import java.util.concurrent.TimeUnit;
+
 
 
 public class LoginSistemaComPageObjectTest {
@@ -20,14 +18,13 @@ public class LoginSistemaComPageObjectTest {
 	 
 	 @Before
 	 public void before() {
-		 System.setProperty("webdriver.chrome.driver", "C:/Users/Brian Tessele/git/Buttonline-WS/src/main/resources/chromedriver.exe");
-		 WebDriver driver = new ChromeDriver();
-		 driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		 System.setProperty("webdriver.chrome.driver", "C:\\SeleniumDrivers\\chromedriver.exe");
+		
 	 }
 	 
 	 @Test
 	 public void loginComSucesso() {
-		
+		 WebDriver driver = new ChromeDriver();
 		 LoginPage loginPage = new LoginPage(driver);
 		   HomePage homePage = loginPage.
 		                                visita("http://www.buttonline.com.br/data/mx_login.php").

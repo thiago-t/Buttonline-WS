@@ -29,10 +29,11 @@ public class RegisterPage {
 
 	}
 
-	public HomePage aceitarAlert() {
+	public RegisterPage aceitarAlert() {
 
 		driver.switchTo().alert().accept();
-		return new HomePage(driver);
+		
+		return new RegisterPage(driver);
 	}
 
 }
