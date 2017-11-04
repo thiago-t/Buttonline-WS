@@ -15,18 +15,19 @@ public class CadastroValidoComPageObjectTest {
 
 	@Before
 	 public void before() {
-		System.setProperty("webdriver.chrome.driver", 
-				"C:\\Users\\Brian Tessele\\git\\Buttonline-WS\\src\\test\\resources\\chromedriver.exe");
-		//WebDriver driver = new ChromeDriver();
+		
 	 } 
 	
 	@Test
 	public void cadastroValido() throws InterruptedException {
+		System.setProperty("webdriver.chrome.driver", 
+				"C:\\Users\\Brian Tessele\\git\\Buttonline-WS\\src\\test\\resources\\chromedriver.exe");
+		//WebDriver driver = new ChromeDriver();
 		WebDriver driver = new ChromeDriver();
 		RegisterPage registerPage = new RegisterPage(driver);
 		HomePage homePage = new HomePage(driver);
 			registerPage.visita("http://buttonline.com.br/data/mx_cadastro.php").
-			autentica("n97769e@gmail.com", "123", "123","Brian", "tester");
+			autentica("n9776969@gmail.com", "123", "123","Brian", "tester");
 			
 		
 		assertTrue(homePage.cadastroEfetuadoComSucesso());

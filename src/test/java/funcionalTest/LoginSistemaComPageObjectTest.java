@@ -18,13 +18,14 @@ public class LoginSistemaComPageObjectTest {
 	 
 	 @Before
 	 public void before() {
-		 System.setProperty("webdriver.chrome.driver", 
-					"C:\\Users\\Brian Tessele\\git\\Buttonline-WS\\src\\test\\resources\\chromedriver.exe");
+		
 		
 	 }
 	 
 	 @Test
 	 public void loginComSucesso() throws InterruptedException{
+		 System.setProperty("webdriver.chrome.driver", 
+					"C:\\Users\\Brian Tessele\\git\\Buttonline-WS\\src\\test\\resources\\chromedriver.exe");
 		 WebDriver driver = new ChromeDriver();
 		 LoginPage loginPage = new LoginPage(driver);
 		   HomePage homePage = loginPage.

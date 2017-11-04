@@ -28,7 +28,7 @@ public class TC001 {
 
 		// Preenche o Email com o valor "teste.2017@gmail.com"
 		WebElement inputEmail = driver.findElement(By.name("email"));
-		inputEmail.sendKeys("tes1tandochromedriver@gmail.com");
+		inputEmail.sendKeys("asdas12344r@gmail.com");
 		//Pause for 2 seconds
         Thread.sleep(2000);
 		// Preenche a Senha com o valor "123"
