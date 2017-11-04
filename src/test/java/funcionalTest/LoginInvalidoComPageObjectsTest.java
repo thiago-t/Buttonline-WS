@@ -14,16 +14,17 @@ import pageObjects.LoginPage;
 
 public class LoginInvalidoComPageObjectsTest {
 
-	private WebDriver driver;
+	//private WebDriver driver;
 
 	@Before
 	public void before() {
-		System.setProperty("webdriver.chrome.driver", "C:\\SeleniumDrivers\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", 
+				"C:\\Users\\Brian Tessele\\git\\Buttonline-WS\\src\\test\\resources\\chromedriver.exe");
 		
 	}
 
 	@Test
-	public void loginSemSucesso() {
+	public void loginSemSucesso () throws InterruptedException {
 		WebDriver driver = new ChromeDriver();
 		LoginPage loginPage = new LoginPage(driver);
 		loginPage.visita("http://www.buttonline.com.br/data/mx_login.php").
@@ -34,7 +35,7 @@ public class LoginInvalidoComPageObjectsTest {
 
 	@After
 	public void after() {
-		driver.quit();
+		//driver.quit();
 	}
 
 }

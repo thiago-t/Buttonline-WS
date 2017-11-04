@@ -14,16 +14,17 @@ import static org.junit.Assert.assertTrue;
 
 public class LoginSistemaComPageObjectTest {
 	 
-	 private WebDriver driver;
+	// private WebDriver driver;
 	 
 	 @Before
 	 public void before() {
-		 System.setProperty("webdriver.chrome.driver", "C:\\SeleniumDrivers\\chromedriver.exe");
+		 System.setProperty("webdriver.chrome.driver", 
+					"C:\\Users\\Brian Tessele\\git\\Buttonline-WS\\src\\test\\resources\\chromedriver.exe");
 		
 	 }
 	 
 	 @Test
-	 public void loginComSucesso() {
+	 public void loginComSucesso() throws InterruptedException{
 		 WebDriver driver = new ChromeDriver();
 		 LoginPage loginPage = new LoginPage(driver);
 		   HomePage homePage = loginPage.
@@ -35,7 +36,7 @@ public class LoginSistemaComPageObjectTest {
 	 
 	@After
 	public void after() {
-	   driver.quit();
+	 //  driver.quit();
 	 }
 	 
 	}

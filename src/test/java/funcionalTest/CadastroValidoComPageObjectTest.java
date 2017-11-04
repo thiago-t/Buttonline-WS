@@ -15,7 +15,8 @@ public class CadastroValidoComPageObjectTest {
 
 	@Before
 	 public void before() {
-		System.setProperty("webdriver.chrome.driver", "C:\\SeleniumDrivers\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", 
+				"C:\\Users\\Brian Tessele\\git\\Buttonline-WS\\src\\test\\resources\\chromedriver.exe");
 		//WebDriver driver = new ChromeDriver();
 	 } 
 	
@@ -25,7 +26,7 @@ public class CadastroValidoComPageObjectTest {
 		RegisterPage registerPage = new RegisterPage(driver);
 		HomePage homePage = new HomePage(driver);
 			registerPage.visita("http://buttonline.com.br/data/mx_cadastro.php").
-			autentica("newt123e@gmail.com", "123", "123","Brian", "tester");
+			autentica("n97769e@gmail.com", "123", "123","Brian", "tester");
 			
 		
 		assertTrue(homePage.cadastroEfetuadoComSucesso());
